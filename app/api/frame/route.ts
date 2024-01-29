@@ -23,12 +23,15 @@ ${org.address && `OrgLocation=${encodeURIComponent(org.address.city + ', ' + org
 NTEETitle=${encodeURIComponent(org.nteeDescription)}&
 NTEEIcon=${encodeURIComponent(`https://app.endaoment.org/images/ntee/v2/@256w/${org.nteeCode}.png`)}`;
 
+    console.log(getOrgMetaTagImageURL)
 
     return new NextResponse(`<!DOCTYPE html><html><head>
     <meta property="fc:frame" content="vNext" />
     <meta property="fc:frame:image" content="${getOrgMetaTagImageURL}" />
-    <meta property="fc:frame:button:1" content="Donate .01 ETH to ${org.name}" />
+    <meta property="fc:frame:button:1" content="Search Again" />
     <meta property="fc:frame:post_url" content="https://random-act-of-kindness.vercel.app/api/donate" />
+    <meta property="fc:frame:button:2" content="Donate to ${org.name}" />
+    <meta property="fc:frame:button:2:redirect" content="https://app.endaoment.org/orgs/${org.ein}" />
   </head></html>`);
 }
 
