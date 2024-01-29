@@ -4,7 +4,7 @@ import fetchRandomOrg from "./random-org";
 
 const frameMetadata = getFrameMetadata({
   buttons: ['Find a Nonprofit'],
-  image: 'https://storage.googleapis.com/endaoment-static/endaoment-meta-preview.png',
+  image: 'https://storage.googleapis.com/endaoment-static/random-frame-of-kindness.png',
   post_url: 'https://random-frame-of-kindness.vercel.app/api/frame',
 });
 
