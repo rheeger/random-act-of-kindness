@@ -5,7 +5,9 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   let accountAddress = '';
   try {
     const body: { trustedData?: { messageBytes?: string } } = await req.json();
-    accountAddress = await getFrameAccountAddress(body, { NEYNAR_API_KEY: 'NEYNAR_API_DOCS' });
+    const apiKey = process.env.NEYNAR_API_KEY || 'not-set';
+    accountAddress = await getFrameAccountAddress(body, { NEYNAR_API_KEY: apiKey }) || '';
+
   } catch (err) {
     console.error(err);
   }
