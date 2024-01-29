@@ -2,7 +2,7 @@ import { getFrameMetadata } from '@coinbase/onchainkit';
 import type { Metadata } from 'next';
 
 const frameMetadata = getFrameMetadata({
-  buttons: ['Next image'],
+  buttons: ['Fetch Random Nonprofit'],
   image: 'https://storage.googleapis.com/endaoment-static/endaoment-meta-preview.png',
   post_url: 'https://random-act-of-kindness.vercel.app/api/frame',
 });
