@@ -1,5 +1,5 @@
 {
-  "name": "random-act-of-kindness",
+  "name": "random-frame-of-kindness",
   "version": "0.1.0",
   "scripts": {
     "build": "rm -rf .next && next build",
