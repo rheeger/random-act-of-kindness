@@ -15,13 +15,16 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     const org = await getRandomOrg();
     console.log(org);
 
+    // use just the first character of the nteeCode to get the major code
+    const orgMajorCode = org.nteeCode.slice(0,1);
+
     const getOrgMetaTagImageURL = `${process.env.PLACID_ORG_GENERATOR_URL}?
 OrgTitle=${encodeURIComponent(org.name)}&
 OrgDescription=${encodeURIComponent(String(org.description))}&
 ${org.logoUrl && `OrgLogo=${encodeURIComponent(String(org.logoUrl))}&`}
 ${org.address && `OrgLocation=${encodeURIComponent(org.address.city + ', ' + org.address.state)}&`}
 NTEETitle=${encodeURIComponent(org.nteeDescription)}&
-NTEEIcon=${encodeURIComponent(`https://app.endaoment.org/images/ntee/v2/@256w/${org.nteeCode}.png`)}`;
+NTEEIcon=${encodeURIComponent(`https://app.endaoment.org/images/ntee/v2/@256w/${orgMajorCode}.png`)}`;
 
     console.log(getOrgMetaTagImageURL)
 
