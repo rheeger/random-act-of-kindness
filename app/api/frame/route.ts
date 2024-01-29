@@ -5,8 +5,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   let accountAddress = '';
   try {
     const body: { trustedData?: { messageBytes?: string } } = await req.json();
-    const apiKey = process.env.NEYNAR_API_KEY || 'not-set';
-    accountAddress = await getFrameAccountAddress(body, { NEYNAR_API_KEY: apiKey }) || '';
+    accountAddress = await getFrameAccountAddress(body, { NEYNAR_API_KEY: process.env.NEYNAR_API_KEY }) || '';
 
   } catch (err) {
     console.error(err);
@@ -14,9 +13,9 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   return new NextResponse(`<!DOCTYPE html><html><head>
     <meta property="fc:frame" content="vNext" />
-    <meta property="fc:frame:image" content="https://zizzamia.xyz/park-2.png" />
+    <meta property="fc:frame:image" content="https://storage.googleapis.com/endaoment-static/endaoment-meta-preview.png" />
     <meta property="fc:frame:button:1" content="${accountAddress}" />
-    <meta property="fc:frame:post_url" content="https://zizzamia.xyz/api/frame" />
+    <meta property="fc:frame:post_url" content="https://random-act-of-kindness.vercel.app/api/frame" />
   </head></html>`);
 }
 
