@@ -9,11 +9,11 @@ const frameMetadata = getFrameMetadata({
 });
 
 export const metadata: Metadata = {
-  title: 'Random Frame of Kindness | Frame Generator',
+  title: 'Random Frame of Kindness',
   description: 'Give it away, give it away, give it away now.',
   openGraph: {
-    title: 'Random Frame of Kindness | Frame Generator',
-    description: 'Random Frame of Kindness | Frame Generator',
+    title: 'Random Frame of Kindness',
+    description: 'Random Frame of Kindness',
     images: ['https://storage.googleapis.com/endaoment-static/random-frame-of-kindness.png'],
   },
   other: {
